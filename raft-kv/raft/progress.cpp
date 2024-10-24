@@ -1,3 +1,4 @@
+#include <stdexcept>
 #include <raft-kv/raft/progress.h>
 #include <raft-kv/common/log.h>
 
@@ -16,6 +17,7 @@ const char* progress_state_to_string(ProgressState state) {
     }
     default: {
       LOG_FATAL("unknown state %d", state);
+      return "";
     }
   }
 }
@@ -134,6 +136,7 @@ bool Progress::is_paused() const {
     }
     default: {
       LOG_FATAL("unexpected state");
+      return "";
     }
   }
 }
