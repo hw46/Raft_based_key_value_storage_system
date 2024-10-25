@@ -64,7 +64,7 @@ class Node {
   virtual proto::ConfStatePtr apply_conf_change(const proto::ConfChange& cc) = 0;
 
   // transfer_leadership attempts to transfer leadership to the given transferee.
-  virtual void transfer_leadership(uint64_t lead, ino64_t transferee) = 0;
+  virtual void transfer_leadership(uint64_t lead, uint64_t transferee) = 0;
 
   // read_index request a read state. The read state will be set in the ready.
   // Read state has a read index. Once the application advances further than the read
